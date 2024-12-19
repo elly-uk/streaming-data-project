@@ -1,0 +1,8 @@
+requests
+boto3
+flake8
+bandit
+python-dotenv
+pytest
+pytest-cov
+pytest-testdox
