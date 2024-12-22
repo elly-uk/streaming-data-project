@@ -2,7 +2,7 @@
 
 # Variables
 PIP = venv/bin/pip
-PYTHON = python
+PYTHON := python3
 ACTIVATE_ENV = source venv/bin/activate
 
 # Define utility variable to help calling Python from the virtual environment
@@ -41,19 +41,20 @@ test:
 
 # Run tests with coverage
 coverage:
-	$(call execute_in_env, $(PYTHON) -m pytest --testdox --cov=src --cov-report=html tests/)
+	$(call execute_in_env, $(PYTHON) -m pytest --testdox --cov=src --cov-report=term-missing --cov-report=html tests/)
 
 # Check code style (PEP-8 compliance)
 lint:
 	$(call execute_in_env, $(PYTHON) -m flake8 src tests)
+	@echo "Linting completed successfully!"
 
 # Run security checks
 security:
 	$(call execute_in_env, $(PYTHON) -m bandit -r src)
 
 # Run the application
-run:
-	$(call execute_in_env, $(PYTHON) src/lambda_function.py "machine learning" "2023-01-01")
+run: build-lambda
+	$(call execute_in_env, $(PYTHON) src/lambda_function.py)
 
 # Clean up (remove virtual environment and other artifacts)
 clean:
@@ -63,6 +64,7 @@ clean:
 	rm -rf .pytest_cache
 	rm -rf htmlcov
 	rm -f .coverage
+	rm -rf .vscode
 	find . -type d -name "__pycache__" -exec rm -r {} +
 
 # Meta-target for combined checks
@@ -70,7 +72,7 @@ check: lint security test
 	@echo "All checks passed!"
 
 # Deploy the application
-deploy:
+deploy: 
 	cd terraform && terraform init && terraform plan && terraform apply
 
 # Destroy the deployment
