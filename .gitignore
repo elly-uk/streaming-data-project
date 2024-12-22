@@ -16,3 +16,4 @@ lambda_package/
 .pytest_cache/
 htmlcov/
 .coverage
+.vscode/
