@@ -57,18 +57,15 @@ This project is designed to fetch articles from the Guardian API and send them t
     make security
     ```
 
-## Cleaning Up
-
-- To clean up the environment and remove generated files:
-    ```sh
-    make clean
-    ```
-
-## Destroying the Deployment
+## Destroying the Deployment and Cleaning Up
 
 - To destroy the application on AWS:
     ```sh
     make destroy
+    ```
+- To clean up the environment and remove generated files:
+    ```sh
+    make clean
     ```
 
 ## Help
