@@ -1,9 +1,9 @@
-requests
-boto3
+requests==2.32.3
+boto3==1.35.86
 urllib3==1.26.15
-flake8
-bandit
-python-dotenv
-pytest
-pytest-cov
-pytest-testdox
+flake8==7.1.1
+bandit==1.8.0
+python-dotenv==1.0.1
+pytest==8.3.4
+pytest-cov==6.0.0
+pytest-testdox==3.1.0
