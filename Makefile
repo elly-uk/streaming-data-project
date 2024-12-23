@@ -32,7 +32,6 @@ build-lambda:
 	rm -rf lambda_package
 	mkdir -p lambda_package
 	$(call execute_in_env, $(PIP) install -r requirements.txt -t lambda_package)
-	$(call execute_in_env, $(PIP) install boto3 -t lambda_package)
 	cp src/lambda_function.py lambda_package/
 	cd lambda_package && zip -r ../lambda_function.zip ./*
 
