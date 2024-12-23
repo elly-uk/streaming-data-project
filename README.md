@@ -22,21 +22,40 @@ This project is designed to fetch articles from the Guardian API and send them t
 
 1. Clone the repository
     ```sh
-    git clone <repository-url>
-    cd <repository-directory>
+    git clone https://github.com/elly-uk/streaming-data-project
+    cd streaming-data-project
     ```
 2. Set up the virtual environment and install requirements:
     ```sh
     make requirements
     ```
-3. Deploy the application:
-    ```sh
-    make deploy
-    ```
-4. Run the application:
+3. Run the application:
     ```sh
     make run
     ```
+4. Deploy the application:
+    ```sh
+    make deploy
+    ```
+5. Test the Lambda function on AWS:
+   - Go to AWS > Lambda > Functions > `guardian_api`
+   - Click "Test" and paste the following event:
+    ```json
+    {
+        "search_term": "machine learning",
+        "date_from": "2023-01-01"
+    }
+    ```
+    or
+    ```json
+    {
+        "search_term": "machine learning",
+        "date_from": ""
+    }
+    ```
+   - Click the "Test" button
+   - Go to AWS > SQS > Queues > `guardian_content` > "Send and receive messages"
+   - Click "Poll for messages"
 
 ## Running Tests
 
