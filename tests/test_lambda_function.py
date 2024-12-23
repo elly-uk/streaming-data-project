@@ -13,10 +13,7 @@ from requests.exceptions import RequestException, Timeout
 from src.lambda_function import (
     fetch_articles,
     lambda_handler,
-    rate_limit,
-    get_queue_url,
-    create_queue,
-    publish_message,
+    rate_limit
 )
 
 
@@ -264,50 +261,3 @@ class TestRateLimit:
         assert test_func() is True
         time.sleep(1)
         assert test_func() is True
-
-
-class TestQueueFunctions:
-    """Tests for get_queue_url, create_queue, and publish_message functions."""
-
-    @pytest.mark.it("Should return the SQS queue URL")
-    def test_get_queue_url(self):
-        """Test get_queue_url function."""
-        queue_url = get_queue_url()
-        assert queue_url == "http://mock-sqs-url.com"
-
-    @pytest.mark.it(
-        "Should raise ValueError if SQS queue URL is not configured"
-    )
-    def test_get_queue_url_missing(self, monkeypatch):
-        """Test get_queue_url function with missing SQS queue URL."""
-        monkeypatch.delenv("SQS_QUEUE_URL", raising=False)
-        with pytest.raises(
-            ValueError, match="SQS queue URL is not configured"
-        ):
-            get_queue_url()
-
-    @pytest.mark.it("Should create an SQS queue")
-    def test_create_queue(self, mock_sqs_client):
-        """Test create_queue function."""
-        mock_sqs_client.create_queue.return_value = {
-            "QueueUrl": "http://mock-sqs-url.com"
-        }
-        response = create_queue()
-        assert response == {"QueueUrl": "http://mock-sqs-url.com"}
-        mock_sqs_client.create_queue.assert_called_once_with(
-            QueueName="guardian_content",
-            Attributes={"MessageRetentionPeriod": "259200"},
-        )
-
-    @pytest.mark.it("Should publish a message to the SQS queue")
-    def test_publish_message(self, mock_sqs_client):
-        """Test publish_message function."""
-        mock_sqs_client.send_message.return_value = {
-            "MessageId": "mock-message-id"
-        }
-        message = {"key": "value"}
-        response = publish_message(message)
-        assert response == {"MessageId": "mock-message-id"}
-        mock_sqs_client.send_message.assert_called_once_with(
-            QueueUrl="http://mock-sqs-url.com", MessageBody=json.dumps(message)
-        )
