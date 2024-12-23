@@ -57,6 +57,8 @@ This project is designed to fetch articles from the Guardian API and send them t
    - Go to AWS > SQS > Queues > `guardian_content` > "Send and receive messages"
    - Click "Poll for messages"
 
+Relevant Link: View Tutorial Video --> https://drive.google.com/file/d/1BJFynIqiK5t4NuONdwr_20SqdByfsbNj/view?usp=sharing
+
 ## Running Tests
 
 - To run tests:
@@ -75,6 +77,8 @@ This project is designed to fetch articles from the Guardian API and send them t
     ```sh
     make security
     ```
+
+Relevant Link: View Tutorial Video --> https://drive.google.com/file/d/1k2hx8YcPGiFQ9Q6K6wyKfzXJnCEGQ1ek/view?usp=sharing
 
 ## Destroying the Deployment and Cleaning Up
 
