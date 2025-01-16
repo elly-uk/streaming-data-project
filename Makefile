@@ -67,6 +67,12 @@ clean:
 	rm -rf .vscode
 	find . -type d -name "__pycache__" -exec rm -r {} +
 
+	rm -rf terraform/.terraform
+	rm -f terraform/.terraform.lock.hcl
+	rm -f terraform/terraform.tfstate
+	rm -f terraform/terraform.tfstate.backup
+	rm -f terraform/terraform.tfvars
+
 # Meta-target for combined checks
 check: lint security test
 	@echo "All checks passed!"
