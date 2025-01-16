@@ -25,19 +25,31 @@ This project is designed to fetch articles from the Guardian API and send them t
     git clone https://github.com/elly-uk/streaming-data-project
     cd streaming-data-project
     ```
-2. Set up the virtual environment and install requirements:
+
+2. Set up Terraform Variables
+   - This project requires a `terraform.tfvars` file to configure sensitive variables such as AWS credentials. 
+   - Create a `terraform.tfvars` file in the `terraform` directory with the following structure:
+     ```hcl
+        guardian_api_key = "your-api-key"
+        guardian_api_url = "your-api-url"
+        aws_access_key_id = "your-access-key-id"
+        aws_secret_access_key_id = "your-secret-access-key-id"
+     ```
+   - **Important**: Do not include this file in version control for security reasons.
+
+3. Set up the virtual environment and install requirements:
     ```sh
     make requirements
     ```
-3. Run the application:
+4. Run the application:
     ```sh
     make run
     ```
-4. Deploy the application:
+5. Deploy the application:
     ```sh
     make deploy
     ```
-5. Test the Lambda function on AWS:
+6. Test the Lambda function on AWS:
    - Go to AWS > Lambda > Functions > `guardian_api`
    - Click "Test" and paste the following event:
     ```json
@@ -57,7 +69,7 @@ This project is designed to fetch articles from the Guardian API and send them t
    - Go to AWS > SQS > Queues > `guardian_content` > "Send and receive messages"
    - Click "Poll for messages"
 
-Relevant Link: View Tutorial Video --> https://drive.google.com/file/d/1BJFynIqiK5t4NuONdwr_20SqdByfsbNj/view?usp=sharing
+Relevant Link: View Tutorial Video --> https://drive.google.com/file/d/1Kl8EXDnroKN8wkfUSVpKd_p0aNNejuzx/view?usp=sharing
 
 ## Running Tests
 
@@ -78,7 +90,7 @@ Relevant Link: View Tutorial Video --> https://drive.google.com/file/d/1BJFynIqi
     make security
     ```
 
-Relevant Link: View Tutorial Video --> https://drive.google.com/file/d/1k2hx8YcPGiFQ9Q6K6wyKfzXJnCEGQ1ek/view?usp=sharing
+Relevant Link: View Tutorial Video --> https://drive.google.com/file/d/1RqK3EUsbJ6-ImJEAoaTQJZu6N1JZk987/view?usp=sharing
 
 ## Destroying the Deployment and Cleaning Up
 
@@ -90,6 +102,8 @@ Relevant Link: View Tutorial Video --> https://drive.google.com/file/d/1k2hx8YcP
     ```sh
     make clean
     ```
+
+Relevant Link: View Tutorial Video --> https://drive.google.com/file/d/1Tgo1A6eallofs0C6qqk0Orisu1tQ5qTK/view?usp=sharing
 
 ## Help
 
