@@ -71,7 +71,6 @@ clean:
 	rm -f terraform/.terraform.lock.hcl
 	rm -f terraform/terraform.tfstate
 	rm -f terraform/terraform.tfstate.backup
-	rm -f terraform/terraform.tfvars
 
 # Meta-target for combined checks
 check: lint security test
