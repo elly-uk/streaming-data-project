@@ -3,7 +3,7 @@ venv/
 .env
 
 # Terraform
-terraform/
+*.tfvars
 
 # Byte-compiled / Optimized / DLL files
 __pycache__/
