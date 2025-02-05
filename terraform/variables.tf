@@ -14,18 +14,3 @@ variable "guardian_api_url" {
   type        = string
 }
 
-variable "aws_access_key_id" {
-  description = "AWS Access Key ID"
-  type        = string
-}
-
-variable "aws_secret_access_key_id" {
-  description = "AWS Secret Access Key ID"
-  type        = string
-}
-
-variable "sqs_queue_url" {
-  description = "SQS Queue URL"
-  type        = string
-}
-
