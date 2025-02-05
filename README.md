@@ -32,8 +32,6 @@ This project is designed to fetch articles from the Guardian API and send them t
      ```hcl
         guardian_api_key = "your-api-key"
         guardian_api_url = "your-api-url"
-        aws_access_key_id = "your-access-key-id"
-        aws_secret_access_key_id = "your-secret-access-key-id"
      ```
    - **Important**: Do not include this file in version control for security reasons.
 
