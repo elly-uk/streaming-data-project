@@ -15,8 +15,9 @@ This project is designed to fetch articles from the Guardian API and send them t
 ## Prerequisites
 
 - Python 3.8 or higher
-- AWS account with necessary permissions
+- AWS account with **necessary permissions** (IAM, SQS, Lambda, and CloudWatch)
 - AWS CLI configured with your credentials
+- AWS Region **"eu-west-2"** (Default. Change it in Terraform if needed: Add `aws_region = "your-region"` in `terraform.tfvars`)
 
 ## Setup, Deployment, and Running Application
 
@@ -33,6 +34,7 @@ This project is designed to fetch articles from the Guardian API and send them t
         guardian_api_key = "your-api-key"
         guardian_api_url = "your-api-url"
      ```
+   - **Important**: Alternatively, you can skip this step. The system will automatically handle these settings in Step 5.
    - **Important**: Do not include this file in version control for security reasons.
 
 3. Set up the virtual environment and install requirements:
