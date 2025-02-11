@@ -17,6 +17,7 @@ This project is designed to fetch articles from the Guardian API and send them t
 - Python 3.8 or higher
 - AWS account with **necessary permissions** (IAM, SQS, Lambda, and CloudWatch)
 - AWS CLI configured with your credentials
+- Register on the Guardian website to obtain an API key and API URL: https://open-platform.theguardian.com/access/ --> Click "Register Developer Key"
 
 ## Setup, Deployment, and Running Application
 
@@ -68,10 +69,10 @@ This project is designed to fetch articles from the Guardian API and send them t
    - Go to AWS > SQS > Queues > `guardian_content` > "Send and receive messages"
    - Click "Poll for messages"
 
-Relevant Link: View Tutorial Video --> 
+Relevant Link: View Tutorial Video --> https://drive.google.com/file/d/1ZZgfpFZj_Q4KOUuj1UQUeb-wx3FJwijj/view?usp=sharing
 
 ## Running Tests
-
+Run test at any point after setting up the environment (after **" make requirements "**)
 - To run tests:
     ```sh
     make test
@@ -87,9 +88,7 @@ Relevant Link: View Tutorial Video -->
 - To run security checks:
     ```sh
     make security
-    ```
-
-Relevant Link: View Tutorial Video --> 
+    ``` 
 
 ## Destroying the Deployment and Cleaning Up
 
@@ -101,8 +100,6 @@ Relevant Link: View Tutorial Video -->
     ```sh
     make clean
     ```
-
-Relevant Link: View Tutorial Video --> 
 
 ## Help
 
