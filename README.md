@@ -17,11 +17,10 @@ This project is designed to fetch articles from the Guardian API and send them t
 - Python 3.8 or higher
 - AWS account with **necessary permissions** (IAM, SQS, Lambda, and CloudWatch)
 - AWS CLI configured with your credentials
-- AWS Region **"eu-west-2"** (Default. Change it in Terraform if needed: Add `aws_region = "your-region"` in `terraform.tfvars`)
 
 ## Setup, Deployment, and Running Application
 
-1. Clone the repository
+1. Open a terminal and run the following command to clone the repository
     ```sh
     git clone https://github.com/elly-uk/streaming-data-project
     cd streaming-data-project
@@ -69,7 +68,7 @@ This project is designed to fetch articles from the Guardian API and send them t
    - Go to AWS > SQS > Queues > `guardian_content` > "Send and receive messages"
    - Click "Poll for messages"
 
-Relevant Link: View Tutorial Video --> https://drive.google.com/file/d/1Kl8EXDnroKN8wkfUSVpKd_p0aNNejuzx/view?usp=sharing
+Relevant Link: View Tutorial Video --> 
 
 ## Running Tests
 
@@ -90,7 +89,7 @@ Relevant Link: View Tutorial Video --> https://drive.google.com/file/d/1Kl8EXDnr
     make security
     ```
 
-Relevant Link: View Tutorial Video --> https://drive.google.com/file/d/1RqK3EUsbJ6-ImJEAoaTQJZu6N1JZk987/view?usp=sharing
+Relevant Link: View Tutorial Video --> 
 
 ## Destroying the Deployment and Cleaning Up
 
@@ -103,7 +102,7 @@ Relevant Link: View Tutorial Video --> https://drive.google.com/file/d/1RqK3EUsb
     make clean
     ```
 
-Relevant Link: View Tutorial Video --> https://drive.google.com/file/d/1Tgo1A6eallofs0C6qqk0Orisu1tQ5qTK/view?usp=sharing
+Relevant Link: View Tutorial Video --> 
 
 ## Help
 
