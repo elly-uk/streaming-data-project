@@ -32,7 +32,7 @@ This project is designed to fetch articles from the Guardian API and send them t
    - Create a `terraform.tfvars` file in the `terraform` directory with the following structure:
      ```hcl
         guardian_api_key = "your-api-key"
-        guardian_api_url = "your-api-url"
+        guardian_api_url = "https://content.guardianapis.com/search"
      ```
    - **Important**: Alternatively, you can skip this step. The system will automatically handle these settings in Step 5.
    - **Important**: Do not include this file in version control for security reasons.
